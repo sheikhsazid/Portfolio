@@ -649,7 +649,7 @@
 
   <!-- Recommendations Section -->
 
-  <section id="services" class="services section">
+<section id="services" class="services section">
 
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
@@ -657,26 +657,28 @@
     <h2>Recommendations</h2>
     <p>Endorsements from my instructors and mentors</p>
   </div>
-  <!-- End Section Title -->
 
   <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-    <div class="row gy-4 testimonial-slider">
+    <!-- Slider Wrapper -->
+    <div class="testimonial-slider-wrapper" id="testimonialSlider">
 
-      <!-- Testimonial 1 -->
-      <div class="col-lg-3 col-md-6 testimonial-slide active" data-aos="zoom-in" data-aos-delay="100">
-        <div class="service-item">
-          <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="testimonial-section" data-aos="fade-up" data-aos-delay="600">
+      <!-- Left Arrow -->
+      <button class="testimonial-arrow left" onclick="prevSlide()">&#10094;</button>
+
+      <!-- Slides -->
+      <div class="testimonial-slider">
+
+        <!-- Slide 1 -->
+        <div class="testimonial-slide active">
+          <div class="service-item">
+            <div class="testimonial-section">
               <div class="testimonial-card">
                 <blockquote>
-                  I had the pleasure of teaching and mentoring Sazid Sheikh during his time as a student at Gopalganj Textile Engineering College.
-                  Throughout his studies, he regularly showed creativity and strong dedication to his studies.
-                  What impressed me most about Sazid was his passion for sustainable and eco-friendly innovation in textiles.
-                  He always strives to connect theory with real-world applications.
-                  I wholeheartedly recommend him for any future academic, research, or professional opportunity.
+                 I had the pleasure of teaching and mentoring Sazid Sheikh during his time as a student at Gopalganj Textile Engineering College. Throughout his studies, he regularly showed creativity and strong dedication to his studies. 
+What impressed me most about Sazid was his passion for sustainable and eco-friendly innovation in textiles. Also, he always strives to connect theory with real world applications. His thinking ability makes him stand out as one of the most promising students I have worked with. I am confident that Sazid will continue to make meaningful contributions in the fields of textiles, sustainability, and beyond. 
+I wholeheartedly recommend him for any future academic, research, or professional opportunity. I am confident that he will bring the same level of enthusiasm, dedication, and skill to the team as he has consistently shown at our college.
                 </blockquote>
-
                 <div class="client-info">
                   <img src="" class="client-avatar">
                   <div class="client-details">
@@ -693,21 +695,15 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Testimonial 2 -->
-      <div class="col-lg-3 col-md-6 testimonial-slide" data-aos="zoom-in" data-aos-delay="100">
-        <div class="service-item">
-          <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="testimonial-section" data-aos="fade-up" data-aos-delay="600">
+        <!-- Slide 2 -->
+        <div class="testimonial-slide">
+          <div class="service-item">
+            <div class="testimonial-section">
               <div class="testimonial-card">
                 <blockquote>
-                  I highly recommend Sazid Sheikh for his strong contributions to the Admin & HR Department at YSSE.
-                  He consistently supported efficient HR processes, fostered a positive work culture,
-                  and strengthened team collaboration.
-                  Mr. Sazid Sheikh is a committed professional who would be an asset to any organization.
+                  I highly recommend Sazid Sheikh for his strong contributions to the Admin & HR Department at YSSE. He consistently supported efficient HR processes, fostered a positive work culture, and strengthened team collaboration. His dedication to youth empowerment and organizational excellence was evident in every task he undertook. Mr Sazid Sheikh is a committed professional who would be an asset to any organization.
                 </blockquote>
-
                 <div class="client-info">
                   <img src="" class="client-avatar">
                   <div class="client-details">
@@ -723,37 +719,134 @@
             </div>
           </div>
         </div>
+
       </div>
 
+      <!-- Right Arrow -->
+      <button class="testimonial-arrow right" onclick="nextSlide()">&#10095;</button>
     </div>
-  </div>
 
+    <!-- Dots -->
+    <div class="testimonial-dots">
+      <span class="dot active" onclick="goToSlide(0)"></span>
+      <span class="dot" onclick="goToSlide(1)"></span>
+    </div>
+
+  </div>
 </section>
 
-<!-- Slideshow CSS (SAFE) -->
+<!-- Slider CSS -->
 <style>
+  .testimonial-slider-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .testimonial-slider {
+    max-width: 900px;
+    width: 100%;
+  }
+
   .testimonial-slide {
     display: none;
   }
+
   .testimonial-slide.active {
     display: block;
   }
-</style>
 
-<!-- Slideshow JS -->
-<script>
-  const slides = document.querySelectorAll('.testimonial-slide');
-  let currentSlide = 0;
-
-  function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    slides[index].classList.add('active');
+  .testimonial-arrow {
+    background: none;
+    border: none;
+    font-size: 36px;
+    cursor: pointer;
+    color: #555;
+    padding: 10px;
+    transition: 0.3s;
   }
 
-  setInterval(() => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-  }, 5000);
+  .testimonial-arrow:hover {
+    color: #000;
+  }
+
+  .testimonial-arrow.left {
+    position: absolute;
+    left: -50px;
+  }
+
+  .testimonial-arrow.right {
+    position: absolute;
+    right: -50px;
+  }
+
+  .testimonial-dots {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .testimonial-dots .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .testimonial-dots .dot.active {
+    background: #000;
+  }
+
+  @media (max-width: 768px) {
+    .testimonial-arrow.left { left: 0; }
+    .testimonial-arrow.right { right: 0; }
+  }
+</style>
+
+<!-- Slider JS -->
+<script>
+  const slides = document.querySelectorAll('.testimonial-slide');
+  const dots = document.querySelectorAll('.dot');
+  const slider = document.getElementById('testimonialSlider');
+  let currentSlide = 0;
+  let autoSlide;
+
+  function showSlide(index) {
+    slides.forEach(s => s.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+    currentSlide = index;
+  }
+
+  function nextSlide() {
+    showSlide((currentSlide + 1) % slides.length);
+  }
+
+  function prevSlide() {
+    showSlide((currentSlide - 1 + slides.length) % slides.length);
+  }
+
+  function goToSlide(index) {
+    showSlide(index);
+  }
+
+  function startAutoSlide() {
+    autoSlide = setInterval(nextSlide, 5000);
+  }
+
+  function stopAutoSlide() {
+    clearInterval(autoSlide);
+  }
+
+  slider.addEventListener('mouseenter', stopAutoSlide);
+  slider.addEventListener('mouseleave', startAutoSlide);
+
+  startAutoSlide();
 </script>
     <!-- Contact Section -->
     <section id="contact" class="contact section">
