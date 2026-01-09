@@ -648,7 +648,6 @@
     </section><!-- /Portfolio Section -->
 
   <!-- Recommendations Section -->
-
 <section id="services" class="services section">
 
   <!-- Section Title -->
@@ -661,7 +660,7 @@
   <div class="container" data-aos="fade-up" data-aos-delay="100">
 
     <!-- Slider Wrapper -->
-    <div class="testimonial-slider-wrapper" id="testimonialSlider">
+    <div class="testimonial-slider-wrapper">
 
       <!-- Left Arrow -->
       <button class="testimonial-arrow left" onclick="prevSlide()">&#10094;</button>
@@ -675,9 +674,9 @@
             <div class="testimonial-section">
               <div class="testimonial-card">
                 <blockquote>
-                 I had the pleasure of teaching and mentoring Sazid Sheikh during his time as a student at Gopalganj Textile Engineering College. Throughout his studies, he regularly showed creativity and strong dedication to his studies. 
-What impressed me most about Sazid was his passion for sustainable and eco-friendly innovation in textiles. Also, he always strives to connect theory with real world applications. His thinking ability makes him stand out as one of the most promising students I have worked with. I am confident that Sazid will continue to make meaningful contributions in the fields of textiles, sustainability, and beyond. 
-I wholeheartedly recommend him for any future academic, research, or professional opportunity. I am confident that he will bring the same level of enthusiasm, dedication, and skill to the team as he has consistently shown at our college.
+                  I had the pleasure of teaching and mentoring Sazid Sheikh during his time at Gopalganj Textile Engineering College.
+                  His passion for sustainable and eco-friendly innovation and ability to connect theory with real-world applications
+                  make him one of the most promising students I have worked with.
                 </blockquote>
                 <div class="client-info">
                   <img src="" class="client-avatar">
@@ -690,7 +689,6 @@ I wholeheartedly recommend him for any future academic, research, or professiona
                     </p>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
@@ -702,7 +700,9 @@ I wholeheartedly recommend him for any future academic, research, or professiona
             <div class="testimonial-section">
               <div class="testimonial-card">
                 <blockquote>
-                  I highly recommend Sazid Sheikh for his strong contributions to the Admin & HR Department at YSSE. He consistently supported efficient HR processes, fostered a positive work culture, and strengthened team collaboration. His dedication to youth empowerment and organizational excellence was evident in every task he undertook. Mr Sazid Sheikh is a committed professional who would be an asset to any organization.
+                  I highly recommend Sazid Sheikh for his strong contributions to the Admin & HR Department at YSSE.
+                  He consistently supported efficient HR processes, fostered a positive work culture,
+                  and strengthened team collaboration.
                 </blockquote>
                 <div class="client-info">
                   <img src="" class="client-avatar">
@@ -714,7 +714,32 @@ I wholeheartedly recommend him for any future academic, research, or professiona
                     </p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <!-- Slide 3 -->
+        <div class="testimonial-slide">
+          <div class="service-item">
+            <div class="testimonial-section">
+              <div class="testimonial-card">
+                <blockquote>
+                  I had the pleasure of having Mr. Sazid Sheikh in my session on CV writing and interview techniques.
+                  Throughout the session, he was highly attentive, interactive, and asked insightful questions
+                  that enriched the discussion. He demonstrated a strong eagerness to learn and apply new knowledge,
+                  showing great potential as a keen and motivated learner.
+                </blockquote>
+                <div class="client-info">
+                  <img src="" class="client-avatar">
+                  <div class="client-details">
+                    <h5>RAFAT RAJIB</h5>
+                    <p>
+                      Corporate Excel Trainer & Resume Writer<br>
+                      <b>BASIS Institute of Technology & Management Limited (BITM)</b>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -724,12 +749,14 @@ I wholeheartedly recommend him for any future academic, research, or professiona
 
       <!-- Right Arrow -->
       <button class="testimonial-arrow right" onclick="nextSlide()">&#10095;</button>
+
     </div>
 
     <!-- Dots -->
     <div class="testimonial-dots">
       <span class="dot active" onclick="goToSlide(0)"></span>
       <span class="dot" onclick="goToSlide(1)"></span>
+      <span class="dot" onclick="goToSlide(2)"></span>
     </div>
 
   </div>
@@ -794,7 +821,6 @@ I wholeheartedly recommend him for any future academic, research, or professiona
     border-radius: 50%;
     display: inline-block;
     cursor: pointer;
-    transition: background 0.3s;
   }
 
   .testimonial-dots .dot.active {
@@ -811,9 +837,7 @@ I wholeheartedly recommend him for any future academic, research, or professiona
 <script>
   const slides = document.querySelectorAll('.testimonial-slide');
   const dots = document.querySelectorAll('.dot');
-  const slider = document.getElementById('testimonialSlider');
   let currentSlide = 0;
-  let autoSlide;
 
   function showSlide(index) {
     slides.forEach(s => s.classList.remove('active'));
@@ -834,19 +858,6 @@ I wholeheartedly recommend him for any future academic, research, or professiona
   function goToSlide(index) {
     showSlide(index);
   }
-
-  function startAutoSlide() {
-    autoSlide = setInterval(nextSlide, 5000);
-  }
-
-  function stopAutoSlide() {
-    clearInterval(autoSlide);
-  }
-
-  slider.addEventListener('mouseenter', stopAutoSlide);
-  slider.addEventListener('mouseleave', startAutoSlide);
-
-  startAutoSlide();
 </script>
     <!-- Contact Section -->
     <section id="contact" class="contact section">
